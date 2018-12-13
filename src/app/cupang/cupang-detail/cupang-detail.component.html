@@ -1,0 +1,42 @@
+<div class="row">
+  <div class="col-xs-12">
+    <img [src]="cupang.imagePath" 
+    alt="{{cupang.name}}" 
+    class="img-responsive"
+    style="max-height:300px">
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <h1>{{cupang.name}}</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <div class="btn-group"
+    appDropdown>
+      <ul class="menu">
+        <li> <a style="cursor:pointer;"(click)="onEditCupang()"> Edit Jenis</a></li>
+        <li> <a style="cursor:pointer"(click)="onDeleteCupang()"> Delete Jenis </a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    {{cupang.description}}
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <!-- Ingredeint -->
+    <ul class="list-group">
+      <li
+      class="list-group-item"
+      *ngFor="let ingredient of cupang.ingredients">
+    {{ingredient.name}}-{{ingredient.amount }}
+    </li>
+    </ul>
+  </div>
+</div>
+
